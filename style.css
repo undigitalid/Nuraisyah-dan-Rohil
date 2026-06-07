@@ -5,26 +5,22 @@
    Tema: Vintage Floral Maroon & Gold Premium
    ========================================================================== */
 :root {
-    /* Palet Warna Utama */
-    --bg-main: #702123;         /* Merah Maroon Gelap eksklusif */
-    --bg-inner: #fdfbf7;        /* Krem terang bertekstur kertas untuk Card */
-    --text-dark: #622a27;       /* Merah Bata gelap untuk teks utama */
-    --border-color: #622a27;    /* Warna garis batas (border) */
-    --gold-primary: #c3a464;    /* Warna Emas Premium untuk tombol / aksen */
-    --gold-hover: #a88b4f;      /* Warna Emas saat disorot */
+    --bg-main: #702123;         
+    --bg-inner: #fdfbf7;        
+    --text-dark: #622a27;       
+    --border-color: #622a27;    
+    --gold-primary: #c3a464;    
+    --gold-hover: #a88b4f;      
     
-    /* Palet Warna Fungsional (Badge) */
-    --success-bg: #eaf5eb;      /* Background hijau lembut */
-    --success-text: #2e7d32;    /* Teks hijau tegas (Hadir) */
-    --danger-bg: #fdeaea;       /* Background merah lembut */
-    --danger-text: #c62828;     /* Teks merah tegas (Berhalangan) */
+    --success-bg: #eaf5eb;      
+    --success-text: #2e7d32;    
+    --danger-bg: #fdeaea;       
+    --danger-text: #c62828;     
     
-    /* Konfigurasi Bayangan (Shadows) */
     --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.3);
     
-    /* Konfigurasi Transisi */
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -51,7 +47,6 @@ body {
     width: 100%;
 }
 
-/* Kustomisasi Scrollbar Web */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -106,7 +101,6 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
     z-index: 1;
 }
 
-/* Efek Overlay Merah Gelap di atas Parallax */
 .bg-dark-red {
     background-color: var(--bg-main);
     background-blend-mode: multiply; 
@@ -115,7 +109,6 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
 /* ==========================================================================
    5. SHAPE CARDS (BENTUK KOTAK KREATIF)
    ========================================================================== */
-/* Shape 1: Kubah (Untuk Cover) */
 .cover-arch {
     position: relative;
     width: 100%;
@@ -135,7 +128,6 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
     transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s ease, border-color 0.5s ease;
 }
 
-/* Shape 2: Kotak Dinamis Sudut Halus (Untuk Konten Utama) */
 .content-box {
     position: relative;
     width: 100%;
@@ -152,7 +144,6 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
     z-index: 2;
 }
 
-/* Shape 3: Kartu Event Vertikal (Akad & Resepsi) */
 .event-detail-card {
     position: relative;
     background-color: var(--bg-inner);
@@ -191,15 +182,12 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
 /* ==========================================================================
    7. SPECIFIC SECTION STYLES
    ========================================================================== */
-
-/* --- A. Cover Section (EFEK MAGIS MENGELILINGI & TERBANG) --- */
 #cover {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 9999;
     transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
     background-color: var(--bg-main); padding: 20px;
 }
 
-/* Background utama lenyap dramatis */
 #cover.opened-dramatic {
     opacity: 0;
     filter: blur(20px) brightness(1.2);
@@ -208,7 +196,6 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
     pointer-events: none;
 }
 
-/* 1. Efek Cahaya Emas Mengelilingi (Glowing Pulse) */
 .magical-unlock {
     animation: magicalGlowSurround 0.6s ease-in-out forwards;
     border-color: var(--gold-primary) !important;
@@ -221,14 +208,12 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
     100% { box-shadow: 0 0 120px 50px rgba(255, 255, 255, 0), inset 0 0 10px rgba(195, 164, 100, 0); transform: scale(0.95); }
 }
 
-/* 2. Isi Kotak (Teks dll) Menghilang ke Atas */
 .magical-unlock > *:not(.floral-ornament) {
     opacity: 0;
     transform: translateY(-20px) scale(0.9);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* 3. Kotak Melesat Kencang Ke Langit */
 .shoot-up {
     transform: translateY(-150vh) scale(0.7) !important;
     opacity: 0;
@@ -250,19 +235,16 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
 }
 #btn-open:hover { background-color: var(--text-dark); color: var(--bg-inner); }
 
-/* Tombol Menyusut Saat Diklik */
 .btn-unlocking {
     background-color: var(--gold-primary) !important; color: transparent !important;
     transform: scale(0) !important; opacity: 0; pointer-events: none;
 }
 
-/* --- B. With Love Section --- */
 .section-title { font-size: 2rem; letter-spacing: 3px; margin-bottom: 30px; position: relative; }
 .photo-wrapper { position: relative; margin-bottom: 40px; width: 100%; max-width: 450px; }
 .with-love-img { width: 100%; height: auto; border-radius: 15px; border: 3px solid #fff; display: block; box-shadow: var(--shadow-md); }
 .ayat { font-size: 1rem; font-weight: 400; max-width: 500px; line-height: 1.8; }
 
-/* --- C. Bride & Groom Section --- */
 .salam { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; margin-bottom: 40px; line-height: 1.7; }
 .couple-cards { display: flex; flex-direction: column; gap: 40px; width: 100%; align-items: center; }
 .person { display: flex; flex-direction: column; align-items: center; width: 100%; }
@@ -279,7 +261,6 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
 .ig-link:hover { color: var(--gold-primary); border-color: var(--gold-primary); }
 .dan { font-size: 4rem; margin: -15px 0; }
 
-/* --- D. Events Section --- */
 .event-heading { font-size: 1.8rem; letter-spacing: 3px; margin-bottom: 15px; }
 .event-day { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 3px; }
 .event-date-number { font-size: 5rem; line-height: 1; margin: 15px 0; }
@@ -296,19 +277,16 @@ h1, h2, h3, .monogram, .subtitle-cover, .event-heading {
 }
 .btn-gold:hover { background-color: var(--gold-hover); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
-/* --- E. Gallery Section --- */
 .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; margin-top: 20px; }
 .gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border-color); transition: var(--transition-smooth); }
 .gallery-grid img:hover { transform: scale(1.03); box-shadow: var(--shadow-sm); }
 
-/* --- F. Gift Section --- */
 .gift-box { border: 1px solid var(--border-color); padding: 25px 20px; border-radius: 15px; margin: 15px 0; width: 100%; display: flex; flex-direction: column; align-items: center; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(5px); }
 .gift-box h3 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin-bottom: 10px; }
 .rek-number { font-size: 1.4rem; margin: 5px 0 10px 0; letter-spacing: 1px; }
 .btn-copy { background: transparent; border: 1px solid var(--border-color); color: var(--text-dark); padding: 10px 25px; border-radius: 30px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500; transition: var(--transition-smooth); margin-top: 10px; }
 .btn-copy:hover { background: var(--text-dark); color: var(--bg-inner); }
 
-/* --- G. RSVP & Wishes Section --- */
 #rsvpForm { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 40px; }
 input, textarea { width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 8px; font-family: 'Montserrat', sans-serif; background: #fff; color: var(--text-dark); font-size: 0.95rem; text-align: center; transition: var(--transition-smooth); }
 textarea { resize: vertical; min-height: 100px; }
@@ -333,7 +311,6 @@ input:focus, textarea:focus { outline: none; border-color: var(--gold-primary); 
     position: absolute; background-color: #fff; top: calc(100% + 5px); left: 0; right: 0; z-index: 99;
     border: 1px solid var(--border-color); border-radius: 10px; box-shadow: var(--shadow-md); overflow: hidden; opacity: 1; transform: translateY(0); transition: all 0.3s ease;
 }
-/* POINTER-EVENTS NONE DITAMBAHKAN AGAR MENCEGAH GHOST CLICK */
 .select-hide { opacity: 0; visibility: hidden; transform: translateY(-10px); pointer-events: none; }
 .select-items div { color: var(--text-dark); padding: 15px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition-smooth); }
 .select-items div:last-child { border-bottom: none; }
@@ -383,9 +360,35 @@ input:focus, textarea:focus { outline: none; border-color: var(--gold-primary); 
 .wish-item { background: #fff; border: 1px solid rgba(98, 42, 39, 0.2); padding: 20px; border-radius: 15px; box-shadow: var(--shadow-sm); transition: var(--transition-smooth); }
 .wish-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .wish-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
-.wish-name { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: bold; text-align: left; }
 
-.badge { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; padding: 5px 12px; border-radius: 20px; font-weight: 600; letter-spacing: 0.5px; display: inline-flex; align-items: center; justify-content: center; text-align: right; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+/* ---> FIX NAMA PANJANG DI SINI <--- */
+.wish-name { 
+    font-family: 'Cinzel', serif; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    text-align: left; 
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+    flex: 1; 
+    padding-right: 15px; 
+}
+
+/* ---> FIX BADGE MENYUSUT DI SINI <--- */
+.badge { 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 0.7rem; 
+    padding: 5px 12px; 
+    border-radius: 20px; 
+    font-weight: 600; 
+    letter-spacing: 0.5px; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: right; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    flex-shrink: 0; 
+}
+
 .badge-hadir { background-color: var(--success-bg); color: var(--success-text); border: 1px solid rgba(46, 125, 50, 0.2); }
 .badge-absen { background-color: var(--danger-bg); color: var(--danger-text); border: 1px solid rgba(198, 40, 40, 0.2); }
 
@@ -422,10 +425,8 @@ footer p { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; opacity: 0
 .animate-fade-right { opacity: 0; transform: translateX(60px); transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1s cubic-bezier(0.25, 0.8, 0.25, 1); }
 .animate-zoom { opacity: 0; transform: scale(0.85); transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
-/* CLASS UTAMA UNTUK MENGHIDUPKAN ANIMASI */
 .is-visible { opacity: 1 !important; transform: translate(0, 0) scale(1) !important; }
 
-/* Animasi Putar Piringan Hitam */
 .playing { animation: spinMusic 4s linear infinite; }
 @keyframes spinMusic { 100% { transform: rotate(360deg); } }
 
