@@ -360,17 +360,16 @@ input:focus, textarea:focus { outline: none; border-color: var(--gold-primary); 
 .wish-item { background: #fff; border: 1px solid rgba(98, 42, 39, 0.2); padding: 20px; border-radius: 15px; box-shadow: var(--shadow-sm); transition: var(--transition-smooth); }
 .wish-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 
-
-/* ---> FIX NAMA DAN BADGE DI SINI <--- */
+/* ---> FIX AMPUH DAN FINAL UNTUK NAMA & BADGE <--- */
 .wish-header { 
     display: flex; 
     justify-content: space-between; 
-    align-items: flex-start; 
-    gap: 12px; 
+    align-items: center; 
+    flex-wrap: wrap; /* KUNCI UTAMA: Mengizinkan badge turun ke baris baru kalau layar HP terlalu sempit */
+    gap: 10px; 
     margin-bottom: 12px; 
     border-bottom: 1px solid rgba(0,0,0,0.05); 
     padding-bottom: 10px; 
-    width: 100%; /* Tambahan pengaman agar tidak melebihi kotak */
 }
 
 .wish-name { 
@@ -378,13 +377,12 @@ input:focus, textarea:focus { outline: none; border-color: var(--gold-primary); 
     font-size: 1.1rem; 
     font-weight: bold; 
     text-align: left; 
-    
-    /* FIX TERBARU: */
+    word-break: normal; /* Kembali normal, agar teks tidak terpotong per huruf */
+    overflow-wrap: break-word; /* Hanya potong kalau ada kata yang super panjang tanpa spasi sama sekali */
     flex: 1; 
-    min-width: 0; /* KUNCI UTAMA: Ubah jadi 0 agar nama panjang bisa terpotong/wrap ke bawah */
-    overflow-wrap: break-word; 
-    word-break: break-word;
-    line-height: 1.3;
+    min-width: 150px; /* Batas aman supaya teks tidak mengkerut jadi tiang listrik */
+    line-height: 1.4;
+    margin: 0;
 }
 
 .badge { 
@@ -397,12 +395,10 @@ input:focus, textarea:focus { outline: none; border-color: var(--gold-primary); 
     display: inline-flex; 
     align-items: center; 
     justify-content: center; 
-    text-align: center; 
+    text-align: right; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-    
-    /* KUNCI BADGE: */
-    white-space: nowrap; 
-    flex-shrink: 0; 
+    white-space: nowrap; /* Teks badge tidak akan pernah terbelah dua */
+    flex-shrink: 0; /* Mencegah badge jadi gepeng */
 }
 /* ---> AKHIR FIX <--- */
 
